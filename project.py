@@ -3146,6 +3146,22 @@ class Project(object):
                        (self._project.name, str(args), p.stderr))
       return p.stdout.splitlines()
 
+    def worktree(self, *args):
+      if 'add' in args:
+          Trace('Hijack worktree add')
+      cmdv = ['worktree']
+      cmdv.extend(args)
+      p = GitCommand(self._project,
+                     cmdv,
+                     bare=self._bare,
+                     gitdir=self._gitdir,
+                     capture_stdout=True,
+                     capture_stderr=True)
+      if p.Wait() != 0:
+        raise GitError('%s worktree %s: %s' %
+                       (self._project.name, str(args), p.stderr))
+      return p.stdout.splitlines()
+
     def __getattr__(self, name):
       """Allow arbitrary git commands using pythonic syntax.
 
