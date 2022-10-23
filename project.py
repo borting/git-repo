@@ -3149,6 +3149,8 @@ class Project(object):
     def worktree(self, *args):
       if 'add' in args:
           Trace('Hijack worktree add')
+          if IsTrace():
+            print(args)
       cmdv = ['worktree']
       cmdv.extend(args)
       p = GitCommand(self._project,
