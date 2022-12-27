@@ -11,3 +11,11 @@ __pycache__
 
 # PyCharm related
 /.idea/
+
+# Code tagging
+GPATH
+GRTAGS
+GTAGS
+
+# Code tracing
+repo.py
