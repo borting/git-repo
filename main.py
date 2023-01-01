@@ -249,6 +249,7 @@ class _Repo(object):
             file=sys.stderr)
       return 1
 
+    print("cmd =", cmd)
     Editor.globalConfig = cmd.client.globalConfig
 
     if not isinstance(cmd, MirrorSafeCommand) and cmd.manifest.IsMirror:
