@@ -661,6 +661,7 @@ def _Main(argv):
     init_http()
     name, gopts, argv = repo._ParseArgs(argv)
     run = lambda: repo._Run(name, gopts, argv) or 0
+    print("Start to run", name);
     if gopts.trace_python:
       import trace
       tracer = trace.Trace(count=False, trace=True, timing=True,
