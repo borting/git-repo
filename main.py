@@ -449,8 +449,6 @@ def _PruneOptions(argv, opt):
       del argv[i]
       continue
     i += 1
-    print(argv)
-  print("OUT:", argv)
 
 
 class _UserAgentHandler(urllib.request.BaseHandler):
@@ -649,6 +647,7 @@ def _Main(argv):
   print(argv)
   _PruneOptions(argv, opt)
   opt, argv = opt.parse_args(argv)
+  print(opt)
   print(argv)
 
   _CheckWrapperVersion(opt.wrapper_version, opt.wrapper_path)
