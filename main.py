@@ -235,6 +235,8 @@ class _Repo(object):
       gitc_manifest = GitcClient(self.repodir, gitc_client_name)
       repo_client.isGitcClient = True
 
+    print("self.commands[{}] = {}".format(name, self.commands[name]))
+
     try:
       cmd = self.commands[name](
           repodir=self.repodir,
