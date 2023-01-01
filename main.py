@@ -216,6 +216,10 @@ class _Repo(object):
       self._PrintHelp(short=True)
       return 1
 
+    print("name =", name)
+    print("gopts =", gopts)
+    print("argv =", argv)
+
     SetDefaultColoring(gopts.color)
 
     git_trace2_event_log = EventLog()
