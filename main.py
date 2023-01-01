@@ -437,16 +437,20 @@ def _PruneOptions(argv, opt):
   i = 0
   while i < len(argv):
     a = argv[i]
+    print(a)
     if a == '--':
       break
     if a.startswith('--'):
       eq = a.find('=')
       if eq > 0:
         a = a[0:eq]
+    print(a, opt.has_option(a))
     if not opt.has_option(a):
       del argv[i]
       continue
     i += 1
+    print(argv)
+  print("OUT:", argv)
 
 
 class _UserAgentHandler(urllib.request.BaseHandler):
