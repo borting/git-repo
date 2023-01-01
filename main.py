@@ -642,8 +642,10 @@ def _Main(argv):
                  help="version of the wrapper script")
   opt.add_option("--wrapper-path", dest="wrapper_path",
                  help="location of the wrapper script")
+  print(argv)
   _PruneOptions(argv, opt)
   opt, argv = opt.parse_args(argv)
+  print(argv)
 
   _CheckWrapperVersion(opt.wrapper_version, opt.wrapper_path)
   _CheckRepoDir(opt.repodir)
