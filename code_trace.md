@@ -16,5 +16,5 @@ Argument parsing 分四階段:
 
 # Sub-Commands
 
-在 `import subcmds` 時 `subcmds/__init_.py` 會將所有 `subcmds/CMDNAME.py` 中的 `CMDNAME` class import 放入
-
+在 `import subcmds` 時 `subcmds/__init_.py` 會將所有 `subcmds/CMDNAME.py` 中的 `CMDNAME` class import 放入 `all_commands` list.
+每一個 subcmds 都繼承 Command class.
